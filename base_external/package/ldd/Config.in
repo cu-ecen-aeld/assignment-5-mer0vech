@@ -1,0 +1,7 @@
+
+config BR2_PACKAGE_LDD
+	bool "ldd"
+	depends on BR2_LINUX_KERNEL
+	help
+	  Includes scull, faulty and hello kernel modules.
+	  Used to understand buildroot kernel module loading and startup.

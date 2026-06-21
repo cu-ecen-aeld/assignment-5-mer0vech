@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+    printf "Loading LDD modules...\n"
+    
+    /etc/init.d/scull-init start
+    /etc/init.d/misc-init start
+    ;;
+    
+  stop)
+    printf "Unloading LDD modules...\n"
+    
+    /etc/init.d/misc-init stop
+    /etc/init.d/scull-init stop
+    ;;
+    
+  *)
+    printf "Usage: $0 {start|stop}\n"
+    exit 1
+    ;;
+esac
+
+exit 0
